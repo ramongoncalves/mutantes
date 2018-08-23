@@ -1,5 +1,6 @@
 package br.com.mutants.service;
 
+import java.math.BigDecimal;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import br.com.mutants.repository.CandidatoRepository;
 
 @Service
 public class MutantService {
+
+	private static final BigDecimal ZERO_BIGDECIMAL = new BigDecimal(0);
 
 	@Autowired
 	private CandidatoRepository candidatoRepository;
@@ -126,7 +129,7 @@ public class MutantService {
 		int quantidadeEncontada = 1;
 		
 		char caracterAnterior = dnaMatrix[linha][coluna];
-		System.out.println(caracterAnterior);
+		
 		char caracterAtual;
 		
 		boolean isReadable = coluna + increment <= dnaMatrix.length;
@@ -134,7 +137,6 @@ public class MutantService {
 		while (isReadable) {
 			
 			caracterAtual = dnaMatrix[linha + increment][coluna + increment];
-			System.out.println(caracterAtual);
 			
 			if(caracterAnterior == caracterAtual) {
 
@@ -177,8 +179,7 @@ public class MutantService {
 		while (isReadable) {
 			
 			caracterAtual = dnaMatrix[linha - increment][coluna + increment];
-			System.out.println(caracterAtual);
-			
+		
 			if(caracterAnterior == caracterAtual) {
 				
 				quantidadeEncontrada++;
@@ -264,8 +265,33 @@ public class MutantService {
 	}
 
 	public Stats getStats() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Stats stats = new Stats();
+		
+		Long countHuman = candidatoRepository.countHumans();
+		Long countMutants = candidatoRepository.countMutants();
+		
+		stats.setCountHumanDna(countHuman);
+		stats.setCountMutantDna(countMutants);
+		
+		BigDecimal ratio = calculaRatio(countHuman, countMutants);
+		
+		stats.setRatio(ratio);
+		
+		return stats;
 	}
 
+	private BigDecimal calculaRatio(Long countMutants, Long countHuman) {
+
+		BigDecimal mutants = new BigDecimal(countMutants);	
+		BigDecimal humans = new BigDecimal(countHuman);
+		
+		if(humans.compareTo(ZERO_BIGDECIMAL) > 0) {
+			return mutants.divide(humans);
+		}
+		
+		return ZERO_BIGDECIMAL;
+	}
+
+	
 }
