@@ -62,7 +62,7 @@ public class MutantService {
 
 	}
 	
-	public void checkHorizontal(char caracter, int indice) {
+	private void checkHorizontal(char caracter, int indice) {
 
 		int quantidadeEncontada = 1;
 		char caracterAnterior = caracter;
@@ -92,7 +92,7 @@ public class MutantService {
 		}
 	}
 
-	public void checkVertical(char caracter, int indice) {
+	private void checkVertical(char caracter, int indice) {
 
 		int quantidadeEncontada = 1;
 		char caracterAnterior = caracter;
