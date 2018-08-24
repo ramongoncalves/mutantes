@@ -1,4 +1,4 @@
-package br.com.mutantes.mutantes;
+package br.com.mutants;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
