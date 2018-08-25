@@ -24,11 +24,11 @@ mvn spring-boot:run
 
 ## Dependências
 
-spring-boot-starter-data-jpa
-spring-boot-starter-web
-spring-boot-starter-test
-spring-boot-starter-devtools
-H2 (BANCO EM MEMÓRIA)
+spring-boot-starter-data-jpa<br/>
+spring-boot-starter-web<br/>
+spring-boot-starter-test<br/>
+spring-boot-starter-devtools<br/>
+H2 (BANCO EM MEMÓRIA)<br/>
 lombok
 
 ## Endpoints
