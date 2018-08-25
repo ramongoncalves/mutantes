@@ -34,8 +34,8 @@ lombok
 ## Endpoints
 
 ### Mutant POST
-http://ec2-18-228-7-159.sa-east-1.compute.amazonaws.com:8080/mutant
+http://mutants2-env.pcbeqv22ew.sa-east-1.elasticbeanstalk.com:8080/mutant
 
 ### Stats GET
-http://ec2-18-228-7-159.sa-east-1.compute.amazonaws.com:8080/stats
+http://mutants2-env.pcbeqv22ew.sa-east-1.elasticbeanstalk.com:8080/stats
 
