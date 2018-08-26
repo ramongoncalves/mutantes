@@ -11,7 +11,7 @@ Fazer o clone ou download e instalar jre 1.8.
 
 ### Prerequisitos
 
-Java 1.8
+Java 1.8<br/>
 Maven 3.X
 
 ### Instalação
