@@ -16,10 +16,10 @@ Maven 3.X
 
 ### Instalação
 
-Dentro da pasta do projeto, executar a seguinte linha de comando:
+Dentro da pasta do projeto, executar a seguinte linha de comando:<br/>
 maven clean install
 
-Após executar o seguinte comando:
+Executar o seguinte comando:<br/>
 mvn spring-boot:run
 
 ## Dependências
